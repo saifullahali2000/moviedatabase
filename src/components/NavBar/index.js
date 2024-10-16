@@ -1,15 +1,17 @@
 import {Link, withRouter} from 'react-router-dom'
 
 import SearchMoviesContext from '../../context/SearchMoviesContext'
-import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
 
 const NavBar = props => {
   const renderSearchBar = () => (
     <SearchMoviesContext.Consumer>
       {value => {
-        const {onTriggerSearchingQuery, onChangeSearchInput, searchInput} =
-          value
+        const {
+          onTriggerSearchingQuery,
+          onChangeSearchInput,
+          searchInput,
+        } = value
 
         const onChangeHandler = event => onChangeSearchInput(event.target.value)
 
@@ -21,16 +23,16 @@ const NavBar = props => {
         }
 
         return (
-          <div className="d-flex align-items-center">
+          <div className="input-search-cont">
             <input
               type="text"
-              className="me-2 search-input"
+              className="search-input"
               onChange={onChangeHandler}
               value={searchInput}
               placeholder="Search"
             />
             <button
-              className="btn btn-outline-info"
+              className="button-search"
               type="button"
               onClick={onSearchHandler}
             >
@@ -43,12 +45,12 @@ const NavBar = props => {
   )
 
   return (
-    <nav className="navbar-container d-flex align-items-center p-3">
+    <nav className="navbar-container">
       <div className="logo-container">
         <h1 className="page-logo">movieDB</h1>
       </div>
-      <div className="ms-auto d-flex align-items-center">
-        <ul className="order-1 d-flex align-items-center p-0 mb-0 ms-3 nav-items-list">
+      <div className="link-container">
+        <ul className="nav-items-list">
           <li className="nav-item">
             <Link className="nav-link" to="/">
               Popular

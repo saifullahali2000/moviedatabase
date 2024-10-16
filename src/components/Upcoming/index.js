@@ -1,6 +1,5 @@
 import React from 'react'
 import Loader from 'react-loader-spinner'
-import 'bootstrap/dist/css/bootstrap.css'
 
 import MovieCard from '../MovieCard'
 import NavBar from '../NavBar'
@@ -49,7 +48,7 @@ class Upcoming extends React.Component {
     const {results} = upcomingMovieResponse
 
     return (
-      <ul className="row p-0 ms-0 me-0 mt-3">
+      <ul className="row">
         {results.map(movie => (
           <MovieCard key={movie.id} movieDetails={movie} />
         ))}
@@ -63,15 +62,17 @@ class Upcoming extends React.Component {
     return (
       <>
         <NavBar />
-        <div className="route-page-body">
-          {isLoading
-            ? this.renderLoadingView()
-            : this.renderPopularMoviesList()}
+        <div className="div-cont">
+          <div className="route-page-body">
+            {isLoading
+              ? this.renderLoadingView()
+              : this.renderPopularMoviesList()}
+          </div>
+          <Pagination
+            totalPages={upcomingMovieResponse.totalPages}
+            apiCallback={this.getUpcomingMoviesResponse}
+          />
         </div>
-        <Pagination
-          totalPages={upcomingMovieResponse.totalPages}
-          apiCallback={this.getUpcomingMoviesResponse}
-        />
       </>
     )
   }

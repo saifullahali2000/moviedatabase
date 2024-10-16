@@ -1,7 +1,25 @@
+.movie-card-container {
+  width: 200px;
+  height: 450px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .poster-size {
   width: 200px;
   object-fit: cover;
   border-radius: 20px;
+}
+
+.button-view{
+  background-color: gray;
+  color: white;
+  border:  none;
+  border-radius: 9px;
+  padding: 8px;
 }
 
 .movie {
@@ -9,8 +27,6 @@
   flex-direction: column;
   align-items: center;
   width: 200px;
-  /* border: 1px solid #fff;
-  border-radius: 20px; */
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   padding: 20px;
@@ -23,6 +39,17 @@
   .movie {
     flex-grow: 1;
   }
+}
+
+.movie-card-image {
+  height: 250px;
+  width: 200px;
+}
+
+.movie-title {
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Roboto';
 }
 
 .view-details {
@@ -43,4 +70,15 @@
 .view-details:hover {
   background-color: yellow;
   color: black;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
