@@ -2,7 +2,7 @@ import './index.css'
 
 const MovieCard = props => {
   const {movieDetails} = props
-  const {id, title, posterPath, voteAverage} = movieDetails
+  const {title, posterPath, voteAverage} = movieDetails
 
   return (
     <li className="movie-card-container">
